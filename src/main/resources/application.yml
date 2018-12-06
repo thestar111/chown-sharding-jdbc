@@ -1,0 +1,20 @@
+# 公钥
+public:
+  key: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJZtfAfaggxBRhuaJeE9KMSIqPpAxbUQRTAjzoSaVqt/8wqd3crYeS2Ebxt2fWHDOQSTpPZfl1+whyMMEtq5vcMCAwEAAQ==
+spring:
+  datasource:
+    # 数据库数据源 1
+    ds0:
+      username: test01
+      # ;config.decrypt=true;config.decrypt.key=${public.key}  U4A5Uv3UHPLtjk1dgw1/+WNP3pIlc8lBDYswjwQ2zS+3NKij1NsFzggxKudLuuerc2Wcgnj4P60VrqQzh7VISQ==
+      password: U4A5Uv3UHPLtjk1dgw1/+WNP3pIlc8lBDYswjwQ2zS+3NKij1NsFzggxKudLuuerc2Wcgnj4P60VrqQzh7VISQ==
+      url: jdbc:mysql://192.168.0.11:21000/t_db_1?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=utf-8
+      type: com.alibaba.druid.pool.DruidDataSource
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000;config.decrypt=true;config.decrypt.key=${public.key}
+    # 数据库数据源 2
+    ds1:
+      username: test02
+      password: U4A5Uv3UHPLtjk1dgw1/+WNP3pIlc8lBDYswjwQ2zS+3NKij1NsFzggxKudLuuerc2Wcgnj4P60VrqQzh7VISQ==
+      url: jdbc:mysql://192.168.0.11:21000/t_db_2?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=utf-8
+      type: com.alibaba.druid.pool.DruidDataSource
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000;config.decrypt=true;config.decrypt.key=${public.key}
